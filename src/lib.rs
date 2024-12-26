@@ -198,15 +198,16 @@ impl<S: Span> Label<S> {
 }
 
 /// A type representing a diagnostic that is ready to be written to output.
+#[expect(missing_docs)]
 pub struct Report<'a, S: Span = Range<usize>> {
-    kind: ReportKind<'a>,
-    code: Option<String>,
-    msg: Option<String>,
-    notes: Vec<String>,
-    help: Option<String>,
-    span: S,
-    labels: Vec<Label<S>>,
-    config: Config,
+    pub kind: ReportKind<'a>,
+    pub code: Option<String>,
+    pub msg: Option<String>,
+    pub notes: Vec<String>,
+    pub help: Option<String>,
+    pub span: S,
+    pub labels: Vec<Label<S>>,
+    pub config: Config,
 }
 
 impl<S: Span> Report<'_, S> {
